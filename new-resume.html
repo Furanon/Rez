@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahkim Staman - Resume</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <style>
   <style>
     * {
       margin: 0;
@@ -13,8 +15,18 @@
       box-sizing: border-box;
     }
     
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     body {
-      background-color: #f9f9f9;
+      background: linear-gradient(135deg, #ffffff 0%, rgba(46, 204, 113, 0.05) 100%);
       color: #333;
       line-height: 1.6;
       font-family: 'Montserrat', sans-serif;
@@ -372,8 +384,10 @@
       }
     }
   </style>
+</style>
 </head>
 <body>
+<div id="tsparticles"></div>
   <div class="resume-container">
     <div class="background-element"></div>
     <div class="background-element-2"></div>
@@ -540,5 +554,74 @@
       </p>
     </div>
   </div>
+</body>
+<script>
+    tsParticles.load("tsparticles", {
+        fullScreen: false,
+        background: {
+            color: {
+                value: "transparent"
+            }
+        },
+        fpsLimit: 60,
+        particles: {
+            color: {
+                value: "#2ecc71"
+            },
+            links: {
+                color: "#2ecc71",
+                distance: 150,
+                enable: true,
+                opacity: 0.2,
+                width: 1
+            },
+            shape: {
+                type: "triangle"
+            },
+            size: {
+                value: { min: 3, max: 6 }
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 800
+                },
+                value: 80
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                outModes: {
+                    default: "bounce"
+                }
+            },
+            opacity: {
+                value: 0.3
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: "grab"
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 200,
+                    links: {
+                        opacity: 0.3
+                    }
+                }
+            }
+        },
+        detectRetina: true
+    });
+</script>
 </body>
 </html>
