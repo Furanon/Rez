@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahkim Staman - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(255,255,255,1) 85%, rgba(220,235,220,0.4) 100%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header {
+      position: relative;
+      margin-bottom: 35px;
+      border-bottom: 2px solid #165a35;
+      padding-bottom: 25px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(22, 90, 53, 0.05) 100%);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(22, 90, 53, 0.1);
+    }
+    
+    .header h1 {
+      color: #223323;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.2s ease;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    
+    .contact-item:hover {
+      transform: translateX(5px);
+      background-color: rgba(22, 90, 53, 0.05);
+    }
+    
+    .contact-item i {
+      color: #2ecc71;
+      width: 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    
+    .contact-item:hover i {
+      transform: scale(1.2);
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(22, 90, 53, 0.08);
+    }
+    
+    .section-title {
+      color: #223323;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      font-family: 'Lora', serif;
+      letter-spacing: 0.5px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #ffd700;
+    }
+    
+    .profile-text, .objective-text {
+      text-align: justify;
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .skill-item {
+      background: linear-gradient(135deg, rgba(22, 90, 53, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+      border-left: 3px solid #2ecc71;
+      padding: 15px 20px;
+      border-radius: 8px;
+      flex: 1 1 calc(50% - 20px);
+      min-width: 250px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .skill-item:hover {
+      box-shadow: 0 5px 15px rgba(46, 204, 113, 0.15);
+      transform: translateY(-3px);
+    }
+    }
+    
+    .skill-item h4 {
+      color: #223323;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-family: 'Lora', serif;
+    }
+    
+    .skill-item p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .experience-item {
+      margin-bottom: 28px;
+      position: relative;
+      padding-left: 22px;
+      transition: all 0.3s ease;
+    }
+    
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #2ecc71;
+      transition: all 0.3s ease;
+    }
+    
+    .experience-item:hover::before {
+      transform: scale(1.5);
+      box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+    }
+    
+    .job-title {
+      font-weight: 600;
+      font-size: 18px;
+      color: #223323;
+      margin-bottom: 5px;
+      font-family: 'Lora', serif;
+    }
+    
+    .job-company {
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 5px;
+      color: #4b5563;
+    }
+    
+    .job-duration {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    
+    .job-description ul {
+      padding-left: 20px;
+    }
+    
+    .job-description li {
+      margin-bottom: 6px;
+      font-size: 14.5px;
+    }
+    
+    .education-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .education-item {
+      flex: 1 1 calc(50% - 20px);
+      min-width: 250px;
+      background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(46, 204, 113, 0.05) 100%);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(46, 204, 113, 0.1);
+    }
+    
+    .education-item:hover {
+      box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+      transform: translateY(-5px);
+    }
+    
+    .education-degree {
+      font-weight: 600;
+      color: #223323;
+      margin-bottom: 6px;
+      font-family: 'Lora', serif;
+      font-size: 16px;
+    }
+    
+    .education-school {
+      font-style: italic;
+      color: #4b5563;
+    }
+    
+    .languages-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .language-item {
+      background-color: #f3f4f6;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .language-item:hover {
+      transform: translateY(-2px);
+    }
+    
+    .language-fluent {
+      background-color: #2ecc71;
+      color: #fff;
+      border: 1px solid rgba(46, 204, 113, 0.3);
+      box-shadow: 0 2px 4px rgba(46, 204, 113, 0.1);
+    }
+    
+    .language-proficient {
+      background-color: rgba(46, 204, 113, 0.15);
+      color: #1a5d3a;
+    }
+    
+    .language-basic {
+      background-color: rgba(46, 204, 113, 0.08);
+      color: #2c7a4f;
+    }
+    
+    .additional-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    
+    .info-title {
+      font-weight: 600;
+      color: #223323;
+      font-family: 'Lora', serif;
+    }
+    
+    .info-content {
+      font-size: 14.5px;
+    }
+    
+    .background-element {
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.05) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 10s infinite ease-in-out;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .background-element-2 {
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.03) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 8s infinite ease-in-out reverse;
+    }
+    
+    .side-accent {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 15px;
+      background: linear-gradient(to bottom, #165a35, #0d3c23);
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .resume-container {
+        padding: 20px;
+      }
+      
+      .skill-item, .education-item {
+        flex: 1 1 100%;
+      }
+      
+      .header h1 {
+        font-size: 32px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <div class="background-element"></div>
+    <div class="background-element-2"></div>
+    <div class="side-accent"></div>
+    
+    <div class="header">
+      <h1>AHKIM STAMAN</h1>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>ahkimstaman@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+66(80)8075700 / +1(775) 220-8522‬</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <span>linkedin.com/in/ahkim</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">PROFESSIONAL PROFILE</h2>
+      <p class="profile-text">
+        A seasoned online consultant and project manager with over 12 years of independent experience in digital strategy, marketing, and systems innovation. I bring a unique blend of analytical rigor (supported by an MSc in Sociology) and practical leadership from roles at Google and OLX. Passionate about travel—with experience in over 40 countries—I am eager to leverage my expertise in communication, problem-solving, and iterative development to excel as a Prompt Engineer at Hippocratic AI.
+      </p>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">OBJECTIVE</h2>
+      <p class="objective-text">
+        To contribute to Hippocratic AI's mission by developing, testing, and refining advanced prompts that optimize AI-human interactions. I aim to apply my deep understanding of user behavior, digital systems, and agile project management to ensure that AI solutions are both innovative and ethically sound.
+      </p>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">KEY SKILLS</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <h4>Prompt Engineering & AI Interaction</h4>
+          <p>Strong analytical and iterative testing mindset for optimizing digital outputs</p>
+        </div>
+        <div class="skill-item">
+          <h4>Project Management</h4>
+          <p>Proven ability to lead cross-functional teams and manage complex projects from conception to execution</p>
+        </div>
+        <div class="skill-item">
+          <h4>Digital Marketing & Strategy</h4>
+          <p>Expertise in online consulting, with a track record of driving growth and improving performance at major tech companies</p>
+        </div>
+        <div class="skill-item">
+          <h4>Data-Driven Problem Solving</h4>
+          <p>Excellent critical thinking, data interpretation, and strategic decision-making skills</p>
+        </div>
+        <div class="skill-item">
+          <h4>Communication & Interpersonal Skills</h4>
+          <p>Fluent in English and Dutch, proficient in German, with basic French</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+      
+      <div class="experience-item">
+        <h3 class="job-title">Independent Online Consultant & Digital Strategist</h3>
+        <p class="job-company">Global (Remote)</p>
+        <p class="job-duration">2012 – Present</p>
+        <div class="job-description">
+          <ul>
+            <li>Provided consultancy services to various startups and established companies, focusing on digital transformation, project management, and innovative marketing solutions</li>
+            <li>Developed and implemented strategies that enhanced user engagement and optimized digital performance across multiple platforms</li>
+            <li>Managed iterative testing frameworks and used data-driven insights to continuously improve system outputs—a skill set directly transferable to prompt engineering</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="experience-item">
+        <h3 class="job-title">Marketing Director</h3>
+        <p class="job-company">OLX</p>
+        <p class="job-duration">2010 – 2012</p>
+        <div class="job-description">
+          <ul>
+            <li>Led marketing initiatives and strategic growth projects for OLX, significantly enhancing brand visibility and market reach</li>
+            <li>Oversaw a development team of six engineers, steering projects to successful completion through innovative digital solutions and continuous optimization</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="experience-item">
+        <h3 class="job-title">AdSense Project Lead</h3>
+        <p class="job-company">Google Ireland</p>
+        <p class="job-duration">2008 – 2010</p>
+        <div class="job-description">
+          <ul>
+            <li>Spearheaded the creation and refinement of a testing framework for ad display and relevance</li>
+            <li>Presented optimizations that generated well north of 20 million USD in additional revenue per annum for Google, demonstrating a strong impact on financial performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">EDUCATION</h2>
+      <div class="education-container">
+        <div class="education-item">
+          <p class="education-degree">MSc in Sociology</p>
+          <p class="education-school">Erasmus University Rotterdam</p>
+        </div>
+        <div class="education-item">
+          <p class="education-degree">MBA Strategic Management</p>
+          <p class="education-school">University of Stellenbosch, South Africa</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">LANGUAGES</h2>
+      <div class="languages-container">
+        <div class="language-item language-fluent">English (Fluent)</div>
+        <div class="language-item language-fluent">Dutch (Fluent)</div>
+        <div class="language-item language-proficient">German (Proficient)</div>
+        <div class="language-item language-basic">French (Basic)</div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2 class="section-title">ADDITIONAL INFORMATION</h2>
+      <div class="additional-info">
+        <div class="info-item">
+          <i class="fas fa-globe"></i>
+          <span class="info-title">Travel Enthusiast:</span>
+          <span class="info-content">Have traveled to over 40 countries, enriching my global perspective and cultural adaptability</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-water"></i>
+          <span class="info-title">Diving & Adventure:</span>
+          <span class="info-content">Certified PADI Instructor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">LETTER OF MOTIVATION</h2>
+      <p class="profile-text">
+        Dear Hiring Team at Hippocratic AI,
+
+        I am writing to express my enthusiasm for the Prompt Engineer position at Hippocratic AI. With over 12 years as an independent online consultant and a robust background in digital strategy and project management—bolstered by leadership roles at both Google and OLX—I bring a unique interdisciplinary approach to technology and human behavior.
+
+        My academic credentials include an MSc in Sociology from Erasmus University Rotterdam and an MBA in strategic management at the University of Stellenbosch, South Africa. These experiences have provided me with deep insights into strategic thinking, human communication, and system optimization. Moreover, my extensive travel across more than 40 countries has honed my adaptability and cultural insight—traits that are invaluable in developing user-centric AI solutions.
+
+        At Google, I led initiatives that generated over 20 million USD in additional revenue annually by optimizing ad performance. At OLX, I managed a team of six engineers, driving forward projects that combined technical innovation with strategic marketing. I am confident that these experiences have prepared me well for the challenges of prompt engineering, where precision, continuous improvement, and ethical considerations are paramount.
+
+        I am particularly excited by Hippocratic AI's commitment to responsible AI innovation. I look forward to the opportunity to apply my skills in iterative development and digital strategy to help create AI solutions that are both effective and ethically sound.
+
+        I sincerely believe that the combination of my education in combination with a natural interest in people, and the experience of many diverse cultures from travel will contribute in contributing unique insights to the learning process of your AI.
+
+        Thank you for considering my application. I am eager to discuss how my background and vision align with the goals of Hippocratic AI.
+
+        Sincerely,
+        Ahkim Staman
+      </p>
+    </div>
+  </div>
+</body>
+</html>
